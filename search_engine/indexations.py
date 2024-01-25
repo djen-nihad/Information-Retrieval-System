@@ -63,41 +63,33 @@ def indexation_LISA_dataset(path):
     docs_split_Porter = frequencyDocs(docs_split_Porter)
     collection_split_Porter = calculateWeightsDocs(docs_split_Porter)
     descriptorSplitPorter_path = "Indexation/DescriptorSplitPorter.txt"
+    inverseSplitPorter_path = "Indexation/InverseSplitPorter.txt"
     create_descriptor_file(descriptorSplitPorter_path, collection_split_Porter)
+    create_inverse_file(inverseSplitPorter_path, collection_split_Porter)
 
+    docs_split_Lancaster = [processing_Docs(doc, extraction='split', Normalize='Lancaster', stopWords=True) for doc in
+                            docs]
+    docs_split_Lancaster = frequencyDocs(docs_split_Lancaster)
+    collection_split_Lancaster = calculateWeightsDocs(docs_split_Lancaster)
+    descriptorSplitLancaster_path = "Indexation/DescriptorSplitLancaster.txt"
+    inverseSplitLancaster_path = "Indexation/InverseSplitLancaster.txt"
+    create_descriptor_file(descriptorSplitLancaster_path, collection_split_Lancaster)
+    create_inverse_file(inverseSplitLancaster_path, collection_split_Lancaster)
 
+    docs_tokenize_Porter = [processing_Docs(doc, extraction='tokenize', Normalize='Porter', stopWords=True) for doc in
+                            docs]
+    docs_tokenize_Porter = frequencyDocs(docs_tokenize_Porter)
+    collection_tokenize_Porter = calculateWeightsDocs(docs_tokenize_Porter)
+    descriptorTokenizePorter_path = "Indexation/DescriptorTokenizePorter.txt"
+    inverseTokenizePorter_path = "Indexation/InverseTokenizePorter.txt"
+    create_descriptor_file(descriptorTokenizePorter_path, collection_tokenize_Porter)
+    create_inverse_file(inverseTokenizePorter_path, collection_tokenize_Porter)
 
-    #
-    #
-    #
-    # docs_split_Lancaster = [processing_Docs(doc, extraction='split', Normalize='Lancaster', stopWords=True) for doc in
-    #                         docs]
-    # docs_tokenize_Porter = [processing_Docs(doc, extraction='tokenize', Normalize='Porter', stopWords=True) for doc in
-    #                         docs]
-    # docs_tokenize_Lancaster = [processing_Docs(doc, extraction='tokenize', Normalize='Lancaster', stopWords=True) for doc
-    #                            in docs]
-    #
-    # docs_split_Lancaster = frequencyDocs(docs_split_Lancaster)
-    # docs_tokenize_Porter = frequencyDocs(docs_tokenize_Porter)
-    # docs_tokenize_Lancaster = frequencyDocs(docs_tokenize_Lancaster)
-    #
-    # collection_split_Lancaster = calculateWeightsDocs(docs_split_Lancaster)
-    # collection_tokenize_Porter = calculateWeightsDocs(docs_tokenize_Porter)
-    # collection_tokenize_Lancaster = calculateWeightsDocs(docs_tokenize_Lancaster)
-    #
-    # descriptorSplitLancaster_path = "Indexation/DescriptorSplitLancaster.txt"
-    # descriptorTokenizePorter_path = "Indexation/DescriptorTokenizePorter.txt"
-    # descriptorTokenizeLancaster_path = "Indexation/DescriptorTokenizeLancaster.txt"
-    # inverseSplitLancaster_path = "Indexation/InverseSplitLancaster.txt"
-    # inverseSplitPorter_path = "Indexation/InverseSplitPorter.txt"
-    # inverseTokenizePorter_path = "Indexation/InverseTokenizePorter.txt"
-    # inverseTokenizeLancaster_path = "Indexation/InverseTokenizeLancaster.txt"
-    #
-    # create_descriptor_file(descriptorSplitLancaster_path, collection_split_Lancaster)
-    # create_descriptor_file(descriptorTokenizePorter_path, collection_tokenize_Porter)
-    # create_descriptor_file(descriptorTokenizeLancaster_path, collection_tokenize_Lancaster)
-    #
-    # create_inverse_file(inverseSplitPorter_path, collection_split_Porter)
-    # create_inverse_file(inverseSplitLancaster_path, collection_split_Lancaster)
-    # create_inverse_file(inverseTokenizePorter_path, collection_tokenize_Porter)
-    # create_inverse_file(inverseTokenizeLancaster_path, collection_tokenize_Lancaster)
+    docs_tokenize_Lancaster = [processing_Docs(doc, extraction='tokenize', Normalize='Lancaster', stopWords=True) for doc
+                               in docs]
+    docs_tokenize_Lancaster = frequencyDocs(docs_tokenize_Lancaster)
+    collection_tokenize_Lancaster = calculateWeightsDocs(docs_tokenize_Lancaster)
+    descriptorTokenizeLancaster_path = "Indexation/DescriptorTokenizeLancaster.txt"
+    inverseTokenizeLancaster_path = "Indexation/InverseTokenizeLancaster.txt"
+    create_descriptor_file(descriptorTokenizeLancaster_path, collection_tokenize_Lancaster)
+    create_inverse_file(inverseTokenizeLancaster_path, collection_tokenize_Lancaster)

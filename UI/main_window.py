@@ -154,9 +154,6 @@ def search():
         query = queries_dataset[k]
         entry.insert(0, query)
         index = False
-
-
-
     result = ""
     extraction, normalize, inverse, index = find_parameter()
     file_name = findFileName(extraction, normalize, inverse, path)
@@ -226,7 +223,6 @@ def search():
     if judgments:
         doc_pertinants = judgments[int(spinbox_var.get()) - 1]
         index_doc_selected = np.nonzero(value)
-        #doc_selected = doc[index_doc_selected] - 1
         doc_selected = doc[index_doc_selected]
         X, Y = curve_rappel_precision(doc_selected, doc_pertinants, 10)
         courbe = create_matplotlib_graph(X, Y)
